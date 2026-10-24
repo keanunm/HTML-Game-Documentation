@@ -1,7 +1,7 @@
 body {
-                background-color: #1e1e1e;
-                color: #d4d4d4;
-                font-family: monospace;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: monospace;            
             }
             pre {
                 background-color: #2b2b2b;
@@ -40,4 +40,4 @@ body {
             .yellow {color: rgb(253, 253, 156);}
             .number{color: rgba(147, 255, 147, 0.933);}
             .html {color: rgb(29, 253, 29);}
-            .value {color:rgb(255, 136, 57) }    
+            .value {color:rgb(255, 136, 57) }                

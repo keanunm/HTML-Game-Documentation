@@ -23,16 +23,60 @@
     &lt;/<span class="html">head</span>&gt;
     &lt;<span class="html">body</span>&gt;
         
-    &lt;/<span class="html">head</span>&gt;
+    &lt;/<span class="html">body</span>&gt;
 &lt;/<span class="html">html</span>&gt;
         </code></pre>
         <p> Now I want to add some text! To add a header, do this:</p>
         <pre class="insanelyTiny"><code>&lt;<span class="html">h1</span>&gt;&lt;/<span class="html">h1</span>&gt;</code></pre>
         <p>You can also use it as a h2, h3, h4, h5, and h6 and also use p for paragraphs</p>
 
+        <p> I use the pre and then code elements for my code boxes.</p>
+
+        <h2>Style!</h2>
+        <p>To create style, you need a &lt;style&gt; in the &lt;head&gt; and here is how to change the style:</p>
+        <pre class="medium"><code>
+<span class="yellow">.button</span> { <span class="comments">/* <- the dot means it is the class="button"
+    The style */</span>
+}
+<span class="yellow">#button</span> { <span class="comments">/* <- the # means it is the id="button"
+        The style */</span>
+}
+<span class="yellow">h1</span> { <span class="comments">/* <- just h1 so &lt;h1&gt; is the targeted element.
+    The style */</span>
+}
+        </code></pre>
+        <p>Now to make this a nice base for a website, (The Dark theme and codeboxes, if you need them) are very simple to make! <br>
+        to make this background color and text color, we want to target the element &lt;<span class="html">body</span>&gt; so write
+        </p>
+        <pre class="insanelyTiny"><code><span class="yellow">body</span> { }</code></pre>
+        <p>Some thing to change are the</p>
+        <pre class="tiny"><code><span class="string">border-radius</span>: <span class="number">8px</span>;</code></pre>
+        <p>,</p>
+        <pre class="tiny"><code><span class="string">background-color</span>: <span class="value">gray</span>;</code></pre>
+        <p>or</p>
+        <pre class="insanelyTiny"><code><span class="string">color</span>: <span class="value">blue</span>;</code></pre>
+        <p>For instance, I am using <span class="string">background-color</span>: <span class="value">#1e1e1e</span>; <br>
+        and <span class="string">color</span>: <span class="value">#d4d4d4</span>;</p>
+        <p>To make my nice code boxes I have this style. (Note: pre is to keep lines and my system MUST use pre to verify my code boxes)</p>
+        <pre class="small"><code>
+<span class="yellow">pre</span> {
+    <span class="string">background-color</span>: <span class="value">#2b2b2b</span>;
+    <span class="string">border-radius</span>: <span class="number">10px</span>;
+    <span class="string">padding</span>: <span class="number">10px</span>;
+}
+        </code></pre>
+
+        <p>To add color to my code, I use classes like class="yellow" or class="value". I create the colors in style. (I use the VS code look.) but <br>
+        comprimise brackets and json brackets. You see them very often and it is WAY more of a pain. So you need to use &lt;<span class="html">span</span>&gt; <br>
+        This is an example. (These are MY NAMES that I have used, so change them to something you like!)</p>
+
+        <pre class="big"><code>&lt;<span class="html">pre</span> <span class="string">class="insanelyTiny"</span>&gt;&lt;<span class="html">code</span>&gt;&lt;<span class="html">span</span> <span class="string">class="value"</span>&gt;Color&lt;/<span class="html">span</span>&gt;&lt;/<span class="html">code</span>&gt;&lt;/<span class="html">pre</span>&gt;</code></pre>
+        <p>Now here is the rendered code box:</p>
+        <pre  class="insanelyTiny"><code><span class="value">Color</span></code></pre>
         <h2>How to create a button!</h2>
         <p>The HTML should have a button with the "id" attribute like this:</p>
         <pre class="small"><code>&lt;<span class="html">button</span> <span class="string">id="button"</span>&gt;Press me!&lt;/<span class="html">button</span>&gt;</code></pre>
+        <h3>Make the button do stuff!</h3>
         <p>Next you should add a &lt;script&gt; inside the "body" and write this code:</p>
 
         <pre class="big"><code>
@@ -51,19 +95,6 @@ Upon clicking the button. */</span>
         <p>Now look at our button! I will render it underneath!</p>
         <button id="button">Press me!</button>
         <p>Note: You can change the style to anything valid like width or others! Have fun changing it :D</p>
-
-        <h3>What about style?</h3>
-        <p>Add a &lt;style&gt; in the &lt;head&gt; and here is how to change the style:</p>
-        <pre class="medium"><code>
-<span class="yellow">.button</span> { <span class="comments">/* <- the dot means it is the class="button"
-    The style */</span>
-}
-<span class="yellow">#button</span> { <span class="comments">/* <- the # means it is the id="button"
-        The style */</span>
-}
-<span class="yellow">h1</span> { <span class="comments">/* <- just h1 so &lt;h1&gt; is the targeted element.
-    The style */</span>
-}
         </code></pre>
         <p>Now if you paid attention, which one are we using? An ID, a CLASS or an ELEMENT?</p>
         <button id="correct1" class="button">ID</button>
@@ -73,9 +104,9 @@ Upon clicking the button. */</span>
         <p>This is the style for the button!</p>
         <pre class="tiny"><code>
 <span class="yellow">#button</span> {
-    <span class="string">padding</span>: <span class="number">5px;</span>
+    <span class="string">padding</span>: <span class="number">5px</span>;
     <span class="string">background-color</span>: <span class="value">gray</span>;
-    <span class="string">border-radius</span>: <span class="number">8px;</span>
+    <span class="string">border-radius</span>: <span class="number">8px</span>;
 }
         </code></pre>
         <p>Now click this button underneath to see the style!</p>
