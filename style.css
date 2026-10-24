@@ -1,0 +1,43 @@
+body {
+                background-color: #1e1e1e;
+                color: #d4d4d4;
+                font-family: monospace;
+            }
+            pre {
+                background-color: #2b2b2b;
+                border-radius: 10px;
+                padding: 10px;
+            }
+            .button {
+               padding: 5px;
+                background-color: gray;
+                border-radius: 8px;
+                color: #d4d4d4;
+            }
+            input {
+                background-color: gray;
+                border-radius: 12px;
+                color: white;
+                font-size: 16px;
+                padding: 10px;
+            }
+            canvas {
+                border: 1px solid blue;
+                border-radius: 10px;
+                background-color: white;
+            }
+            .small {width: 300px;}
+            .medium {width: 425px;}
+            .big {width: 600px;}
+            .tiny {width: 200px;}
+            .insanelyTiny {width: 75px;}
+
+            .comments {color: #696969;}
+            .document {color: #6b86ff;}
+            .string {color: rgb(165, 230, 252)}
+            .write {color: rgb(255, 72, 72);}
+            .function {color: rgb(209, 118, 209);}
+            .yellow {color: rgb(253, 253, 156);}
+            .number{color: rgba(147, 255, 147, 0.933);}
+            .html {color: rgb(29, 253, 29);}
+            .value {color:rgb(255, 136, 57) }    

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Good and functional websites</title>
+    </head>
+    <body>
+        <h1>How to make styled and functional websites!</h1>
+        <p>This is an interactive tutorial where you will see quizes troughout the entire page.</p>
+
+        <h2>Introduction</h2>
+        <p>This is how to create a base for your website! First, make a index.html and write this basic setup!</p>
+        <pre class="small"><code>
+&lt;<span class="html">!DOCTYPE</span> <span class="string">html</span>&gt;
+
+&lt;<span class="html">html</span>&gt;
+    &lt;<span class="html">head</span>&gt;
+        &lt;<span class="html">style</span>&gt;
+        
+        &lt;/<span class="html">style</span>&gt;
+
+        &lt;<span class="html">title</span>&gt;My Website&lt;/<span class="html">title</span>&gt;
+    &lt;/<span class="html">head</span>&gt;
+    &lt;<span class="html">body</span>&gt;
+        
+    &lt;/<span class="html">head</span>&gt;
+&lt;/<span class="html">html</span>&gt;
+        </code></pre>
+        <p> Now I want to add some text! To add a header, do this:</p>
+        <pre class="insanelyTiny"><code>&lt;<span class="html">h1</span>&gt;&lt;/<span class="html">h1</span>&gt;</code></pre>
+        <p>You can also use it as a h2, h3, h4, h5, and h6 and also use p for paragraphs</p>
+
+        <h2>How to create a button!</h2>
+        <p>The HTML should have a button with the "id" attribute like this:</p>
+        <pre class="small"><code>&lt;<span class="html">button</span> <span class="string">id="button"</span>&gt;Press me!&lt;/<span class="html">button</span>&gt;</code></pre>
+        <p>Next you should add a &lt;script&gt; inside the "body" and write this code:</p>
+
+        <pre class="big"><code>
+<span class="write">let</span> button = <span class="document">document</span>.<span class="function">getElementById</span>(<span class="string">"button"</span>); <span class="comments">// This gets the button we created</span>
+
+button.<span class="function">addEventListener</span>(<span class="string">"click"</span>, <span class="function">dissapear</span>) <span class="comments"> /* Makes it so the function is called
+Upon clicking the button. */</span>
+
+<span class="write">function</span> <span class="function">dissapear</span>() {
+    button.<span class="document">style</span>.<span class="document">opacity</span> = <span class="number">0</span>; <span class="comments">// Poof! Our button vanished from existance!</span>
+    <span class="yellow">setTimeout</span>(<span class="write">function</span>() {
+        button.<span class="document">style</span>.<span class="document">opacity</span> = <span class="number">1</span>; <span class="comments">// Back into existance!</span>
+    }, <span class="number">2000</span>); <span class="comments">// Wait for 2000 milliseconds then run function "Back into existance!"</span>
+}
+        </code></pre>
+        <p>Now look at our button! I will render it underneath!</p>
+        <button id="button">Press me!</button>
+        <p>Note: You can change the style to anything valid like width or others! Have fun changing it :D</p>
+
+        <h3>What about style?</h3>
+        <p>Add a &lt;style&gt; in the &lt;head&gt; and here is how to change the style:</p>
+        <pre class="medium"><code>
+<span class="yellow">.button</span> { <span class="comments">/* <- the dot means it is the class="button"
+    The style */</span>
+}
+<span class="yellow">#button</span> { <span class="comments">/* <- the # means it is the id="button"
+        The style */</span>
+}
+<span class="yellow">h1</span> { <span class="comments">/* <- just h1 so &lt;h1&gt; is the targeted element.
+    The style */</span>
+}
+        </code></pre>
+        <p>Now if you paid attention, which one are we using? An ID, a CLASS or an ELEMENT?</p>
+        <button id="correct1" class="button">ID</button>
+        <button class="wrong1 button">CLASS</button>
+        <button class="wrong1 button">ELEMENT</button>
+
+        <p>This is the style for the button!</p>
+        <pre class="tiny"><code>
+<span class="yellow">#button</span> {
+    <span class="string">padding</span>: <span class="number">5px;</span>
+    <span class="string">background-color</span>: <span class="value">gray</span>;
+    <span class="string">border-radius</span>: <span class="number">8px;</span>
+}
+        </code></pre>
+        <p>Now click this button underneath to see the style!</p>
+        <button id="enable", class="button">Enable/Disable Style</button>
+
+        <p>Change the values! These are just the default ones! (You may need to click the button twice again.)</p>
+        <input type="number" id="borderRadius" placeholder="Write your border radius!">
+        <input type="number" id="padding" placeholder="Write your padding value!">
+        <input type="string" id="background" placeholder="Write your background color!">
+
+        <h2>Canvas!</h2>
+        <p>Have you ever wondered how to make an object move in a canvas? Well I will teach you. <br> So the first step is to write this in our "index.html"</p>
+        <pre class="medium"><code>&lt;<span class="html">canvas</span> <span class="string">id="mycanvas" width="100px" height="100px"</span>&gt;&lt;/<span class="html">canvas</span>&gt;</code></pre>
+        <p>To use style, add this in your &lt;style&gt;.</p>
+        <pre class="tiny"><code>
+<span class="yellow">canvas</span> {
+    <span class="string">border</span>: <span class="number">1px</span> <span class="value">solid blue</span>;
+    <span class="string">border-radius</span>: <span class="number">10px</span>;
+    <span class="string">background-color</span>: <span class="value">white</span>;
+}
+        </code></pre>
+        <p>This is what it is supposed to look like:</p>
+        <canvas id="mycanvas" width="100px" height="100px"></canvas>
+        <p>I am going to add some simple movement buttons underneath. I think you have read how to add a button earlier!</p>
+        <button class="button" id="left">Move the square to the left!</button>
+        <button class="button" id="right">Move the square to the right!</button>
+        <p>To draw a square you need an event listener and functions linked to the buttons like this: (Note: IDs might not be the same for you.)</p>
+        <pre class="medium"><code>
+<span class="comments">// Canvas buttons</span>
+<span class="write">let</span> right = <span class="document">document</span>.<span class="function">getElementById</span>(<span class="string">"right"</span>);
+<span class="write">let</span> left = <span class="document">document</span>.<span class="function">getElementById</span>(<span class="string">"left"</span>);
+<span class="write">let</span> mycanvas = <span class="document">document</span>.<span class="function">getElementById</span>(<span class="string">"mycanvas"</span>);
+<span class="write">let</span> ctx = mycanvas.<span class="function">getContext</span>(<span class="string">"2d"</span>);
+<span class="comments">// Value</span>
+<span class="write">let</span> bx = <span class="number">50</span>;
+<span class="write">let</span> by = <span class="number">50</span>;
+
+<span class="comments">// EventListeners</span>
+right.<span class="function">addEventListener</span>(<span class="string">"click"</span>, <span class="write">function</span>() {
+    bx += <span class="number">5</span>;
+});
+
+left.<span class="function">addEventListener</span>(<span class="string">"click"</span>, <span class="write">function</span>() {
+    bx -= <span class="number">5</span>;
+});
+
+<span class="write">function</span> draw() {
+    ctx.<span class="function">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>);
+    ctx.fillStyle = <span class="string">"red"</span>;
+    ctx.<span class="function">fillRect</span>(bx, by, <span class="number">10</span>, <span class="number">10</span>);
+    <span class="yellow">requestAnimationFrame</span>(<span class="function">draw</span>);
+}
+        </code></pre>
+
+        <br> <button class="button" id="simulation">Start/End Simulation</button>
+
+        <p>Now what about Key Presses? That would be AMAZING. To add key presses, create a new canvas! (Play the simulation with W A S D)</p>
+
+        <canvas id="keyPresses" width="100px" height="100px"></canvas>
+        <br> <button class="button" id="start">Start/End Simulation</button>
+        <p>Here is how to do it.</p>
+        <pre class="medium"><code>
+<span class="comments">// Get our canvas</span>
+<span class="write">let</span> canvas = <span class="document">document</span>.<span class="function">getElementById</span>(<span class="string">"keyPresses"</span>);
+<span class="write">let</span> ctx = canvas.<span class="function">getContext</span>(<span class="string">"2d"</span>);
+<span class="comments">// Variables</span>
+<span class="write">let</span> W = <span class="document">false</span>;
+<span class="write">let</span> S = <span class="document">false</span>;
+<span class="write">let</span> A = <span class="document">false</span>;
+<span class="write">let</span> D = <span class="document">false</span>;
+
+<span class="write">let</span> px = <span class="number">50</span>;
+<span class="write">let</span> py = <span class="number">50</span>;
+
+<span class="comments">// Add event listeners</span>
+<span class="document">document</span>.<span class="function">addEventListener</span>(<span class="string">"keydown"</span>, <span class="write">function</span>(<span class="value">event</span>) {
+    <span class="function">if</span> (<span class="value">event</span>.<span class="document">key</span> === <span class="string">"w"</span>) {
+        W = <span class="document">true</span>;
+    }
+    <span class="function">if</span> (<span class="value">event</span>.<span class="document">key</span> === <span class="string">"s"</span>) {
+        S = <span class="document">true</span>;
+    }
+    <span class="function">if</span> (<span class="value">event</span>.<span class="document">key</span> === <span class="string">"a"</span>) {
+        A = <span class="document">true</span>; 
+    }
+    <span class="function">if</span> (<span class="value">event</span>.<span class="document">key</span> === <span class="string">"d"</span>) {
+        D = <span class="document">true</span>;
+    }
+});
+<span class="document">document</span>.<span class="function">addEventListener</span>(<span class="string">"keyup"</span>, <span class="write">function</span>(<span class="value">event</span>) {
+    <span class="function">if</span> (<span class="value">event</span>.<span class="document">key</span> === <span class="string">"w"</span>) {
+        W = <span class="document">false</span>;
+    }
+    <span class="function">if</span> (<span class="value">event</span>.<span class="document">key</span> === <span class="string">"s"</span>) {
+        S = <span class="document">false</span>;
+    }
+    <span class="function">if</span> (<span class="value">event</span>.<span class="document">key</span> === <span class="string">"a"</span>) {
+        A = <span class="document">false</span>; 
+    }
+    <span class="function">if</span> (<span class="value">event</span>.<span class="document">key</span> === <span class="string">"d"</span>) {
+        D = <span class="document">false</span>;
+    }
+});
+
+<span class="write">function</span> <span class="function">gameLoop</span>() {
+    <span class="function">if</span> (W) {
+        py -= <span class="number">1</span>;
+    }
+    <span class="function">if</span> (S) {
+        py += <span class="number">1</span>;
+    }
+    <span class="function">if</span> (A) {
+        px -= <span class="number">1</span>;
+    }
+    <span class="function">if</span> (D) {
+        px += <span class="number">1</span>;
+    }
+
+    ctx.fillStyle = <span class="string">"red"</span>;
+    ctx.<span class="function">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>);
+    ctx.<span class="function">fillRect</span>(px, py, <span class="number">10</span>, <span class="number">10</span>);
+
+    <span class="yellow">requestAnimationFrame</span>(<span class="function">gameLoop</span>); 
+}
+
+<span class="function">gameLoop</span>();
+        </code></pre>
+        <script src="script.js"></script>
+    </body>
+</html>
